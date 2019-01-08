@@ -1,0 +1,15 @@
+.general{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.6cm;
+    /*background-color: rgb(241, 240, 200);*/
+    height: 5cm;
+    width: 15cm;
+    margin-right: auto; 
+    margin-left: auto;
+    margin-top: 1cm;
+}
+
+p,b{
+    display: inline-block
+}
+

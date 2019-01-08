@@ -1,28 +1,58 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Bitcoin from './components/Bitcoin.js'
+import PayPal from './components/Paypal.js';
+import CreditCard from './components/CreditCard.js'
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Button } from 'react-bootstrap';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit saska <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+    render() {
+
+        return (
+            
+            <Router>
+                <div className="App">
+                  
+                  <h2 className="title">Choose your payment method</h2>
+                  <hr/>
+                  <Link to="/Bitcoin">
+                    <Button bsStyle="primary" className="btn">
+                      <img src={require('./components/bitcoin.png')} alt="bitcoin" className="image"/>
+                      Bitcoin
+                    </Button>  
+                  </Link>
+
+                  <Link to="/PayPal">
+                    <Button bsStyle="primary" className="btn">
+                      <img src={require('./components/paypal.png')} alt="bitcoin" className="image"/>
+                      PayPal
+                    </Button>
+                  </Link>
+
+                  <Link to="/Card">
+                    <Button bsStyle="primary" className="btn">
+                      <img src={require('./components/masterCard.png')} alt="bitcoin" className="image1"/>
+                      Credit card
+                    </Button>
+                  </Link>
+  
+                  <Route path="/Bitcoin" component={Bitcoin}/>
+                  <Route path="/PayPal" component={PayPal}/>
+                  <Route path="/Card" component={CreditCard}/>
+        
+                </div>
+            </Router>
     );
   }
+
+
+
+
+
+
+
+
 }
 
 export default App;
