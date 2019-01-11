@@ -6,9 +6,13 @@ import CreditCard from './components/CreditCard.js'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Button } from 'react-bootstrap';
 
+const f = window.location.pathname.split('/')[1];
+const g = f.split('=')[1];
 class App extends Component {
+  
     render() {
-
+     
+      localStorage.setItem('idpayment', g);
         return (
             
             <Router>
