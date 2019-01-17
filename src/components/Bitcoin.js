@@ -22,7 +22,7 @@ class Bitcoin extends React.Component{
                 <div>
                     <p className="p">If you want to pay with {this.props.location.pathname.split('/')[1]}, click on the button below</p>
                     
-                    <Button bsStyle="warning" className="b" onClick={this.msbitcoin()}>Let's start</Button>
+                    <Button bsStyle="warning" className="b" onClick={this.msbitcoin}>Let's start</Button>
                 </div>
             </div>
         );

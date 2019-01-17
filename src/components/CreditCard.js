@@ -5,13 +5,14 @@ import axios from 'axios';
 class CreditCard extends React.Component{
 
     msbank(){
-
+        console.log("usao")
         axios.get('http://localhost:8051/msbank/bank/getPaymentObj/'+localStorage.getItem('idpayment'))
         .then(response => 
             console.log("ok je sve")
             //window.location.href = response.data
         )
     }
+    
 
     render(){
 
@@ -20,7 +21,7 @@ class CreditCard extends React.Component{
                 <div>
                     <p className="p">If you want to pay with {this.props.location.pathname.split('/')[1]}, click on the button below</p>
                     
-                    <Button onClick={this.msbank()} bsStyle="warning" className="b">Let's start</Button>
+                    <Button onClick={this.msbank} bsStyle="warning" className="b">Let's start</Button>
                 </div>
 
             </div>
@@ -28,6 +29,9 @@ class CreditCard extends React.Component{
         );
     }
 
+    
+
 }
+
 
 export default CreditCard;
