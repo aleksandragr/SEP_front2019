@@ -7,10 +7,13 @@ class CreditCard extends React.Component{
     msbank(){
         console.log("usao")
         axios.get('http://localhost:8051/msbank/bank/getPaymentObj/'+localStorage.getItem('idpayment'))
-        .then(response => 
-            console.log("ok je sve")
-            //window.location.href = response.data
-        )
+        .then(response => {
+            if(response.data==="neuspesno"){
+                console.log("neuspesno");
+            }else{
+                window.location.href = response.data;
+            }
+        })
     }
     
 
