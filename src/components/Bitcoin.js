@@ -6,7 +6,7 @@ import axios from 'axios';
 class Bitcoin extends React.Component{
 
     msbitcoin(){
-        axios.get('http://localhost:8051/msbitcoin/payment/bitcoin/' + localStorage.getItem('idpayment'))
+        axios.get('http://localhost:8051/objectpayment/getobjectbitcoin/' + localStorage.getItem('idpayment'))
         .then(response => 
             
             window.location.href = response.data
