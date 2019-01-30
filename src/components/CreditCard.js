@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import axios from 'axios';
+import Cookies from 'universal-cookie';
 
 class CreditCard extends React.Component{
 
@@ -11,7 +12,14 @@ class CreditCard extends React.Component{
             if(response.data==="neuspesno"){
                 console.log("neuspesno");
             }else{
-                window.location.href = response.data;
+
+                var x = response.data.split('id=')[1];
+                var y = response.data.split('/id=')[0];
+                              
+                const cookies = new Cookies();
+                cookies.set('merchantmag', x); 
+
+                window.location.href = y;
             }
         })
     }
