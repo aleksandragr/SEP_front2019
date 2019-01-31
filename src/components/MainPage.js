@@ -3,7 +3,6 @@ import '../App.css';
 import Bitcoin from './Bitcoin.js'
 import PayPal from './Paypal.js';
 import CreditCard from './CreditCard.js'
-import SuccessfulPage from './SuccessfulPage.js'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Button } from 'react-bootstrap';
 
