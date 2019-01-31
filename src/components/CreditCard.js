@@ -17,7 +17,7 @@ class CreditCard extends React.Component{
                 var y = response.data.split('/id=')[0];
                               
                 const cookies = new Cookies();
-                cookies.set('merchantmag', x); 
+                cookies.set('currentpayment', x); 
 
                 window.location.href = y;
             }
