@@ -3,60 +3,59 @@ import '../App.css';
 import Bitcoin from './Bitcoin.js'
 import PayPal from './Paypal.js';
 import CreditCard from './CreditCard.js'
-import SuccessfulPage from './SuccessfulPage.js'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Button } from 'react-bootstrap';
 
-class MainPage extends React.Component{
+class MainPage extends React.Component {
 
-    render(){
+  render() {
 
-        return(
+    return (
 
-            <Router>
-                
-                
-                <div className="App">
-                
-                  <h2 className="title">Choose your payment method</h2>
-                  <hr/>
-                  <Link to="/Bitcoin">
-                    <Button bsStyle="primary" className="btn">
-                      <img src={require('./bitcoin.png')} alt="bitcoin" className="image"/>
-                      Bitcoin
-                    </Button>  
-                  </Link>
+      <Router>
 
-                  <Link to="/PayPal">
-                    <Button bsStyle="primary" className="btn">
-                      <img src={require('./paypal.png')} alt="bitcoin" className="image"/>
-                      PayPal
+
+        <div className="App">
+
+          <h2 className="title">Choose your payment method</h2>
+          <hr />
+          <Link to="/Bitcoin">
+            <Button bsStyle="primary" className="btn">
+              <img src={require('./bitcoin.png')} alt="bitcoin" className="image" />
+              Bitcoin
                     </Button>
-                  </Link>
+          </Link>
 
-                  <Link to="/Card">
-                    <Button bsStyle="primary" className="btn">
-                      <img src={require('./masterCard.png')} alt="bitcoin" className="image1"/>
-                      Credit card
+          <Link to="/PayPal">
+            <Button bsStyle="primary" className="btn">
+              <img src={require('./paypal.png')} alt="bitcoin" className="image" />
+              PayPal
                     </Button>
-                  </Link>
-  
-                  <Route path="/Bitcoin" component={Bitcoin}/>
-                  <Route path="/PayPal" component={PayPal}/>
-                  <Route path="/Card" component={CreditCard}/>
-                  
-        
-                </div>
-            </Router>
+          </Link>
+
+          <Link to="/Card">
+            <Button bsStyle="primary" className="btn">
+              <img src={require('./masterCard.png')} alt="bitcoin" className="image1" />
+              Credit card
+                    </Button>
+          </Link>
+
+          <Route path="/Bitcoin" component={Bitcoin} />
+          <Route path="/PayPal" component={PayPal} />
+          <Route path="/Card" component={CreditCard} />
+
+
+        </div>
+      </Router>
 
 
 
-        )
+    )
 
 
 
 
-    }
+  }
 
 
 
