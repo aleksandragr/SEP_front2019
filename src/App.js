@@ -5,7 +5,9 @@ import SuccessPaypal from './components/SuccessPaypal.js'
 import MainPage from './components/MainPage.js'
 //import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
+
 import { Router } from "@reach/router"
+
 
 const f = window.location.pathname.split('/')[1];
 const g = f.split('=')[1];
