@@ -4,6 +4,7 @@ import SuccessfulPage from './components/SuccessfulPage.js'
 import SuccessPaypal from './components/SuccessPaypal.js'
 import MainPage from './components/MainPage.js'
 //import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import FailedPage from './components/FailedPage.js';
 
 
 import { Router } from "@reach/router"
@@ -23,7 +24,7 @@ class App extends Component {
                 <MainPage exact path={"/id=" + g} />
                 <SuccessfulPage path={"/Successfully"} />
                 <SuccessPaypal path={"/paypal/success"} />
-
+                <FailedPage path={"/failed"}/>
             </Router>
         );
     }
