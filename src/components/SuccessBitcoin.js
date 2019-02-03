@@ -2,14 +2,14 @@ import React from 'react';
 import '../App.css';
 import axios from 'axios';
 
-//const b = window.location.pathname.split('/')[1];
-//const b1 = b.split('=')[1];
+const b = window.location.pathname.split('/')[1];
+const b1 = b.split('=')[1];
 const coi = localStorage.getItem("createorderid");
 
 class SuccessBitcoin extends React.Component{
 
     componentDidMount(){
-        axios.get('http://localhost:8051/msbitcoin/payment/getorder/' + coi)
+        axios.get('http://localhost:8051/msbitcoin/payment/getorder/' + coi + '/' + b1)
         .then(response => 
             
             console.log(response)
