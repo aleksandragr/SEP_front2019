@@ -3,13 +3,19 @@ import "./CSSforAll.css";
 import { Button } from 'react-bootstrap';
 import axios from 'axios';
 
+
+
 class Bitcoin extends React.Component{
 
     msbitcoin(){
         axios.get('http://localhost:8051/objectpayment/getobjectbitcoin/' + localStorage.getItem('idpayment'))
-        .then(response => 
-            
-            window.location.href = response.data
+        .then(response => {
+           var r = response.data;
+           
+           localStorage.setItem('createorderid', r.split(',')[1]);
+           window.location.href = r.split(',')[0]
+        }
+          
         )
     }
 
