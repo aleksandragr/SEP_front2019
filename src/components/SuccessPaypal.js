@@ -51,14 +51,25 @@ class SuccessPaypal extends React.Component {
                 'Content-Type': 'application/json'
             }
         })
-            .then(res => {
+            .then(res => res.json()).then(dat => {
 
 
 
                 alert("Your payment is successfully completed!");
-                console.log(res);
 
-                window.location.href = localStorage.getItem('ncUrl')
+                /*
+              let transaction = {
+
+                  email: this.state.email,
+                  password: this.state.password
+            
+                };
+            
+                var datas = JSON.stringify(data);
+            */
+
+
+                //window.location.href = localStorage.getItem('ncUrl')
 
 
             }
