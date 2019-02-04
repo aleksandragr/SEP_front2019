@@ -57,25 +57,44 @@ class SuccessPaypal extends React.Component {
 
                 alert("Your payment is successfully completed!");
 
-                /*
-              let transaction = {
 
-                  email: this.state.email,
-                  password: this.state.password
-            
+                let transaction = {
+
+                    email: dat.email,
+                    status: dat.status,
+                    payeremail: dat.payeremail,
+                    description: dat.description,
+                    time: dat.time,
+                    merchant: dat.merchant,
+                    currency: dat.currency,
+                    type: dat.type,
+                    amount: dat.amount
+
                 };
-            
-                var datas = JSON.stringify(data);
-            */
 
+                var trs = JSON.stringify(transaction);
 
-                //window.location.href = localStorage.getItem('ncUrl')
+                fetch('http://localhost:8051/objectpayment/successpayment/' + localStorage.getItem('idpayment'), {
+                    method: 'POST',
+                    body: trs,
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                    .then(resp => {
+
+                        console.log(resp.data);
+
+                        if (resp.data === "success") {
+                            window.location.href = localStorage.getItem('ncUrl')
+                        }
+
+                    }
+                    )
 
 
             }
             )
-
-
     }
 
 
@@ -83,13 +102,13 @@ class SuccessPaypal extends React.Component {
 
         return (
 
-            <div className="Successful">
+            <div className="Successful" >
                 Your payment has been successfully created!
                 <div>
                     <img src={require('./successful.png')} alt="paypal" className="successimage" />
                     <button onClick={this.confirmPayment}>Click here to complete payment!</button>
-                </div>
-            </div>
+                </div >
+            </div >
 
         )
 
