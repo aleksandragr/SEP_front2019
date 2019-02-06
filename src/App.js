@@ -7,6 +7,7 @@ import MainPage from './components/MainPage.js'
 import FailedPage from './components/FailedPage.js';
 import { Router } from "@reach/router"
 import SuccessBitcoin from './components/SuccessBitcoin.js'
+import MembershipPayment from './components/MembershipPayment.js'
 
 
 const f = window.location.pathname.split('/')[1];
@@ -25,13 +26,14 @@ class App extends Component {
 
             <Router>
                 <MainPage exact path={"/id=" + g} />
+                <MembershipPayment exact path={"/membership/id=" + g} />
                 <SuccessfulPage path={"/Successfully"} />
                 <SuccessPaypal path={"/paypal/success"} />
-                <FailedPage path={"/failed"}/>
-                <SuccessBitcoin path={"/bitcoin="+b1} />
+                <FailedPage path={"/failed"} />
+                <SuccessBitcoin path={"/bitcoin=" + b1} />
             </Router>
 
-            
+
         );
     }
 
