@@ -26,7 +26,7 @@ class App extends Component {
 
             <Router>
                 <MainPage exact path={"/id=" + g} />
-                <MembershipPayment exact path={"/membership/id=" + g} />
+                <MembershipPayment exact path={"/paypal=" + g} />
                 <SuccessfulPage path={"/Successfully"} />
                 <SuccessPaypal path={"/paypal/success"} />
                 <FailedPage path={"/failed"} />
