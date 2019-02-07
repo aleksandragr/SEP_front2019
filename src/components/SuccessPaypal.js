@@ -35,7 +35,9 @@ class SuccessPaypal extends React.Component {
 
         let data = {
             paymentId: e[0],
-            payerID: f[3]
+            payerID: f[3],
+            clientId: localStorage.getItem('clientId'),
+            clientSecret: localStorage.getItem('clientSecret')
 
         };
 
@@ -68,13 +70,15 @@ class SuccessPaypal extends React.Component {
                     merchant: dat.merchant,
                     currency: dat.currency,
                     type: dat.type,
-                    amount: dat.amount
+                    amount: dat.amount,
+                    paymentid: dat.paymentid
 
                 };
 
                 var trs = JSON.stringify(transaction);
+                const c = localStorage.getItem('id');
 
-                fetch('http://localhost:8051/objectpayment/successpayment/' + localStorage.getItem('idpayment'), {
+                fetch('http://localhost:8051/objectpayment/successpayment/' + c, {
                     method: 'POST',
                     body: trs,
                     headers: {

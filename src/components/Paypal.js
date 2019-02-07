@@ -9,10 +9,14 @@ class PayPal extends React.Component {
 
 
     mspaypal() {
-        axios.get('http://localhost:8051/objectpayment/getobjectpaypal/' + localStorage.getItem('idpayment'))
+        const c = localStorage.getItem('idpayment');
+        axios.get('http://localhost:8051/objectpayment/getobjectpaypal/' + c)
             .then(response => {
 
                 localStorage.setItem('ncUrl', response.data.client_url);
+                localStorage.setItem('clientId', response.data.clientId);
+                localStorage.setItem('clientSecret', response.data.clientSecret);
+                localStorage.setItem('id', c);
                 window.location.href = response.data.redirect_url
 
             }
