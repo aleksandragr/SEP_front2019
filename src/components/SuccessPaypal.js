@@ -85,17 +85,13 @@ class SuccessPaypal extends React.Component {
                         'Content-Type': 'application/json'
                     }
                 })
-                    .then(resp => {
+                    .then(resp => resp.json()).then(da => {
 
-                        console.log(resp.data);
 
-                        if (resp.data === "success") {
-                            window.location.href = localStorage.getItem('ncUrl')
-                        }
+                        window.location.href = da.fronturl;
 
                     }
-                    )
-
+                    );
 
             }
             )
