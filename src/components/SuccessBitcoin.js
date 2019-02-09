@@ -10,7 +10,7 @@ const coi = localStorage.getItem("createorderid");
 class SuccessBitcoin extends React.Component{
 
     componentDidMount(){
-        axios.get('http://localhost:8051/msbitcoin/payment/getorder/' + coi + '/' + b1)
+        axios.get('http://' + localStorage.getItem('ipmain') + ':8051/msbitcoin/payment/getorder/' + coi + '/' + b1)
         .then(response => 
             
             console.log(response)
@@ -18,7 +18,7 @@ class SuccessBitcoin extends React.Component{
     }
 
     finish(){
-        axios.get('http://localhost:8051/objectpayment/gotonc/' + localStorage.getItem('idpayment'))
+        axios.get('http://' + localStorage.getItem('ipmain') + ':8051/objectpayment/gotonc/' + localStorage.getItem('idpayment'))
         .then(response => {
            
            window.location.href = response.data

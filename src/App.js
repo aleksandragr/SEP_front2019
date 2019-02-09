@@ -17,13 +17,13 @@ const g = f.split('=')[1];
 
 const b = window.location.pathname.split('/')[1];
 const b1 = b.split('=')[1];
-
+localStorage.setItem('idpayment', g);
 class App extends Component {
 
     render() {
 
 
-        localStorage.setItem('idpayment', g);
+       
         return (
 
             <Router>

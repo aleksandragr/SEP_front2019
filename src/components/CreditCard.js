@@ -6,8 +6,9 @@ import Cookies from 'universal-cookie';
 class CreditCard extends React.Component{
 
     msbank(){
+        const pomo = localStorage.getItem('idpayment');
         console.log("usao")
-        axios.get('http://localhost:8051/objectpayment/getobjectbank/'+localStorage.getItem('idpayment'))
+        axios.get('http://' + localStorage.getItem('ipmain') + ':8051/objectpayment/getobjectbank/'+localStorage.getItem('idpayment'))
         .then(response => {
             if(response.data==="neuspesno"){
                 console.log("neuspesno");
@@ -18,7 +19,7 @@ class CreditCard extends React.Component{
                               
                 const cookies = new Cookies();
                 cookies.set('currentpayment', x); 
-
+                localStorage.setItem('idpomo', pomo);
                 window.location.href = y;
             }
         })
