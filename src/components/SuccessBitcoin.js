@@ -10,7 +10,8 @@ const coi = localStorage.getItem("createorderid");
 class SuccessBitcoin extends React.Component{
 
     componentDidMount(){
-        axios.get('http://' + localStorage.getItem('ipmain') + ':8051/msbitcoin/payment/getorder/' + coi + '/' + b1)
+        console.log("FRONTTTT");
+        axios.get('http://' + localStorage.getItem('ipmain') + ':8051/objectpayment/getorder/' + coi + '/' + b1)
         .then(response => 
             
             console.log(response)
