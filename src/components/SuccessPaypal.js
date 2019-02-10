@@ -46,7 +46,7 @@ class SuccessPaypal extends React.Component {
 
         var datas = JSON.stringify(data);
 
-        fetch('http://localhost:8051/mspaypal/paypal/complete/payment', {
+        fetch('http://' + localStorage.getItem('ipmain') + ':8051/objectpayment/complete/payment', {
             method: 'PUT',
             body: datas,
             headers: {
@@ -78,7 +78,7 @@ class SuccessPaypal extends React.Component {
                 var trs = JSON.stringify(transaction);
                 const c = localStorage.getItem('id');
 
-                fetch('http://localhost:8051/objectpayment/successpayment/' + c, {
+                fetch('http://' + localStorage.getItem('ipmain') + ':8051/objectpayment/successpayment/' + c, {
                     method: 'POST',
                     body: trs,
                     headers: {

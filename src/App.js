@@ -10,7 +10,7 @@ import SuccessBitcoin from './components/SuccessBitcoin.js'
 import MembershipPayment from './components/MembershipPayment.js'
 
 
-localStorage.setItem("ipmain", '192.168.0.26');
+localStorage.setItem("ipmain", '192.168.43.174');
 
 const f = window.location.pathname.split('/')[1];
 const g = f.split('=')[1];
